@@ -1,8 +1,0 @@
-package ss.finalproject.twentyfivehourday.mvc.view;
-import ss.finalproject.twentyfivehourday.mvc.ModelAwareServlet;
-import ss.finalproject.twentyfivehourday.mvc.model.domain.User;
-
-public class UserJsonView extends ModelAwareServlet<User>{
-
-	
-}

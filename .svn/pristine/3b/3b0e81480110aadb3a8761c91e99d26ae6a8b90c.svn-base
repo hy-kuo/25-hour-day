@@ -1,9 +1,0 @@
-@charset "UTF-8";
-/* CSS Document */
-.footer{
-	font-family:"Courier New", Courier, monospace;
-}
-#mouseover{
-	color:#FFF;
-	background-color:#000;
-}
