@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.content-hidden {
+	display: none;
+}
+
+.list-activity{
+	border:none;
+	}
+
+#login-form{
+	text-align:right;
+	}
+#login-bar{
+	text-align:right;
+	}
+	
+#login-logout{
+	text-align:right;
+	}
+	
+#timeline_img{
+	position:relative;
+	text-align:center;
+	top:150px;
+	}
+	
+#threeButton{
+	position:relative;
+	float:right;
+	top:250px;	
+	}
+	
+#Activity-List-Area{
+	text-align:center;
+	}
+
+.list-activity-id{
+	display:none;
+	}

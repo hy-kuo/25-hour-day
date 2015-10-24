@@ -1,0 +1,79 @@
+package ss.finalproject.twentyfivehourday.mvc.model.domain;
+
+import javax.persistence.Id;
+
+public class Activity {
+	
+	@Id
+	private Long id; 
+	private String title;
+	private String content;
+	private String founder; // the id of person who do this activity first
+	private int[] characteristic = {0,0,0,0,0}; // five characteristic of an activity
+	private int scoredTimes = 0;
+	private long stamp;
+	//private String[] whoDislike = {null};
+	
+	public Activity() {
+		super();
+	}
+		
+	public Activity(String title, String content, String founder, int[] characteristic){
+		this.title = title;
+		this.content = content;
+		this.founder = founder;
+		this.characteristic = characteristic;
+		this.scoredTimes=1;
+	}
+	
+	public Long getId() {
+			return id;
+		}
+
+	public void setId(Long id) {
+			this.id = id;
+		}
+	
+	public long getStamp() {
+		return stamp;
+	}
+
+	public void setStamp(long stamp) {
+		this.stamp = stamp;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent(){
+		return content;
+	}
+
+	public void setContent(String content){
+		this.content = content;
+	}
+
+	public String getFounder(){
+		return founder;
+	}
+	
+	public void setFounder(String founder){
+		this.founder = founder;
+	}
+	
+	public int[] getCharacteristic(){
+		return characteristic;
+	}
+	
+	public void setCharacteristic(int[] characteristic){
+		for(int i = 0; i < 5 ; i++ ){
+			this.characteristic[i] += characteristic[i];
+			this.characteristic[i] = this.characteristic[i]/scoredTimes;
+		}
+	}	
+}

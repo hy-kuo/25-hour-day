@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.content-hidden {
+	display: none;
+}
+
+
+#login-form{
+	text-align:right;
+	}
+#login-bar{
+	text-align:right;
+	}
+	
+#login-logout{
+	text-align:right;
+	}

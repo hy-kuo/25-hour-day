@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.content-hidden {
+	display: none;
+}
+
+
+
+#login-bar{
+	text-align:right;
+	position:relative;
+	top: 150px;
+	}
+	

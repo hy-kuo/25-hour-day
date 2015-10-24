@@ -1,0 +1,32 @@
+// JavaScript Document
+
+onload = function(){
+	initUser();
+}
+
+var initUser = function(){
+		//user to register
+		var registerBtn = document.getElementById('register');
+		registerBtn.onclick = function(){
+				location.href = 'http://25-hour-day.appspot.com/register.html';
+				//end of user to regiser
+				}
+				
+				// handle login
+				var loginForm = document.getElementById('login-form'); 
+				loginForm.onsubmit =  function(){
+				var id = document.getElementById('id').value;
+				var password = document.getElementById('password').value;
+				
+				ajaxRequest ('POST',encodeURI('login?id=' + id + '&password='
+				+ password), null,null, 
+				function(status,headers, body){//success callback
+					alert('success!');
+				},function(status,headers, body){//error callback
+					alert('error: ' + status);
+
+				},null);
+				return false;
+				
+				}
+}

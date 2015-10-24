@@ -1,0 +1,186 @@
+// JavaScript Document
+
+var showDetail = function(id){
+		var detail = document.getElementById('detailArea');
+		removeClass(detail ,'content-hidden');
+		initComments(id);
+		initDetails(id);
+		initCommentArea();
+	
+	
+	};
+
+
+var initComments = function(id){
+			ajaxRequest('GET', encodeURI('comment/'+id), {'Accept': 'application/json;'}, null
+			, function(status, headers, body) { //success
+			
+			
+		}, function(status, headers, body) { //error
+				
+			}, null);
+	
+	};
+	
+var initDetails = function(id){
+		ajaxRequest('GET', encodeURI('activity/'+id), {'Accept': 'application/json;'}, null
+			, function(status, headers, body) { //success
+				var activity = eval('(' + body + ')');
+				
+				var detailArea = document.getElementById('Activity-List-Area');
+				var htmlFrag = '';
+
+			htmlFrag +=  '<div class="activity-id">' + activity.id + '</div>' 
+					// escape in case title and text contain chars sensitive to HTML parsing 
+					+ '<div class="activity-title">' + escapeHtml(unescape(activity.title))+ '</div>' 
+					+ '<div class="activity-content">' + escapeHtml(unescape(activity.content)) + '</div>'  
+					+ '<div class="activity-founder"> by ' +  escapeHtml(unescape(activity.founder)) + ' at </div>'
+					+ '<div class="activity-stamp">' +  new Date(activity.stamp).toString().split(/(GMT|UTC)/i)[0] + '</div>'  				    
+					+ '<div id="activity-char0"> 娛樂 ' + '<span id ="char0Value">' +activity.characteristic[0]+'</span>' + '<img id="plus-ch0" src="img/Plus.png" width="13" height="13" /></div>'
+  					
+					+ '<div id="activity-char1"> 獵奇 ' + '<span id ="char1Value">' + activity.characteristic[1]+'</span>' + '<img id="plus-ch1" src="img/Plus.png" width="13" height="13" /></div>'
+					+ '<div id="activity-char2"> 殺時間 ' + '<span id ="char2Value">' + activity.characteristic[2]+'</span>' + '<img id="plus-ch2" src="img/Plus.png" width="13" height="13" /></div>'
+					+ '<div id="activity-char3"> 經濟 ' + '<span id ="char3Value">' + activity.characteristic[3] +'</span>'+ '<img id="plus-ch3" src="img/Plus.png" width="13" height="13" /></div>'
+					+ '<div id="activity-char4"> 同樂 ' + '<span id ="char4Value">' + activity.characteristic[4]+'</span>' + '<img id="plus-ch4" src="img/Plus.png" width="13" height="13" /></div>'
+					;
+				detailArea.innerHTML = htmlFrag;
+				
+				initplusBtns(activity.id);
+
+
+
+		}, function(status, headers, body) { //error
+			alert('Get details of activity error ' + status);			
+			}, null);
+	
+	};
+	
+var initCommentArea = function(){
+	
+	
+	};
+	
+var initplusBtns = function(id){
+	var plus0 = document.getElementById('plus-ch0');
+	var plus1 = document.getElementById('plus-ch1');
+	var plus2 = document.getElementById('plus-ch2');
+	var plus3 = document.getElementById('plus-ch3');
+	var plus4 = document.getElementById('plus-ch4');
+	
+	plus0.onmouseover = function(){
+		this.src = 'img/Plus_over.png';
+	}
+	plus0.onmouseout = function(){
+		this.src = 'img/Plus.png';
+	}
+	plus1.onmouseover = function(){
+		this.src = 'img/Plus_over.png';
+	}
+	plus1.onmouseout = function(){
+		this.src = 'img/Plus.png';
+	}
+	plus2.onmouseover = function(){
+		this.src = 'img/Plus_over.png';
+	}
+	plus2.onmouseout = function(){
+		this.src = 'img/Plus.png';
+	}
+	plus3.onmouseover = function(){
+		this.src = 'img/Plus_over.png';
+	}
+	plus3.onmouseout = function(){
+		this.src = 'img/Plus.png';
+	}
+	plus4.onmouseover = function(){
+		this.src = 'img/Plus_over.png';
+	}
+	plus4.onmouseout = function(){
+		this.src = 'img/Plus.png';
+	}
+	
+	plus0.onclick = function(){
+		ajaxRequest('PUT', encodeURI('activity/'+id), {'Content-Type': 'application/json;charset=UTF-8'},'0'
+			, function(status, headers, body) { //success
+			var char0Value = document.getElementById('char0Value');
+			
+			var value=parseInt(char0Value.innerHTML);
+			value = value +1
+			htmlFrag = value;
+			char0Value.innerHTML = htmlFrag;
+			alert('Thanks for your scoring !');
+			
+			
+		}, function(status, headers, body) { //error
+			alert('Error'+ status);	
+			}, null);
+		}
+
+	plus1.onclick = function(){
+		ajaxRequest('PUT', encodeURI('activity/'+id), {'Content-Type': 'application/json;charset=UTF-8'},'1'
+			, function(status, headers, body) { //success
+			var char1Value = document.getElementById('char1Value');
+			
+			var value=parseInt(char1Value.innerHTML);
+			value = value +1
+			htmlFrag = value;
+			char1Value.innerHTML = htmlFrag;
+			alert('Thanks for your scoring !');
+			
+			
+		}, function(status, headers, body) { //error
+			alert('Error'+ status);	
+			}, null);
+		}
+
+	plus2.onclick = function(){
+		ajaxRequest('PUT', encodeURI('activity/'+id), {'Content-Type': 'application/json;charset=UTF-8'},'2'
+			, function(status, headers, body) { //success
+			var char2Value = document.getElementById('char2Value');
+			
+			var value=parseInt(char2Value.innerHTML);
+			value = value +1
+			htmlFrag = value;
+			char2Value.innerHTML = htmlFrag;
+			alert('Thanks for your scoring !');
+			
+			
+		}, function(status, headers, body) { //error
+			alert('Error'+ status);	
+			}, null);
+		}	
+
+	plus3.onclick = function(){
+		ajaxRequest('PUT', encodeURI('activity/'+id), {'Content-Type': 'application/json;charset=UTF-8'},'3'
+			, function(status, headers, body) { //success
+			var char3Value = document.getElementById('char3Value');
+			
+			var value=parseInt(char3Value.innerHTML);
+			value = value +1
+			htmlFrag = value;
+			char3Value.innerHTML = htmlFrag;
+			alert('Thanks for your scoring !');
+			
+			
+		}, function(status, headers, body) { //error
+			alert('Error'+ status);	
+			}, null);
+		}
+
+	plus4.onclick = function(){
+		ajaxRequest('PUT', encodeURI('activity/'+id), {'Content-Type': 'application/json;charset=UTF-8'},'4'
+			, function(status, headers, body) { //success
+			var char4Value = document.getElementById('char4Value');
+			
+			var value=parseInt(char4Value.innerHTML);
+			value = value +1
+			htmlFrag = value;
+			char4Value.innerHTML = htmlFrag;
+			alert('Thanks for your scoring !');
+			
+			
+		}, function(status, headers, body) { //error
+			alert('Error'+ status);	
+			}, null);
+		}
+
+	}

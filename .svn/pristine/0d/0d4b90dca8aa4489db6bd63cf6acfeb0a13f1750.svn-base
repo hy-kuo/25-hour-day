@@ -1,0 +1,83 @@
+// JavaScript Document
+
+onload = function(){
+	initUser();
+	
+}
+
+$(document).ready(function () {
+    $("#twitterWall").twitterWall("javascript", { refresh: true, refreshTimeout: 1500 });
+});
+
+var initUser = function(){
+		//user to register
+		var registerBtn = document.getElementById('register');
+		registerBtn.onclick = function(){
+				location.href = 'http://25-hour-day.appspot.com/register.html';
+				//end of user to regiser
+				}
+				checklogin();
+
+				// handle login
+				var loginForm = document.getElementById('login-form'); 
+				loginForm.onsubmit =  function(){
+				var id = document.getElementById('id').value;
+				var password = document.getElementById('password').value;
+				
+				
+				ajaxRequest ('POST',encodeURI('login'), {'Content-Type': 'application/json;charset=UTF-8'}, 
+				'{' + '"id": "' + id + '", "password" :"' + password +'"' + '}',
+				function(status,headers, body){//success callback
+				var login = document.getElementById('login');
+				addClass(login,'content-hidden');
+
+				var logout = document.getElementById('logout');
+					removeClass(logout, 'content-hidden');								
+					var threeButton = document.getElementById('threeButton');
+					removeClass(threeButton, 'content-hidden');
+				},function(status,headers, body){//error callback
+					alert('Id or password is wrong!');
+					return;
+				},null);
+				return false;
+				
+				}
+				//end of login
+				
+				//start logout
+				var logoutForm = document.getElementById('logout-form');
+				logoutForm.onsubmit = function(){
+					ajaxRequest('PUT', encodeURI('login'), null, null
+							, function(status, headers, body) { //success
+								
+								var logout = document.getElementById('logout');
+									addClass(logout, 'content-hidden');		
+									var login = document.getElementById('login');
+									removeClass(login,'content-hidden');
+							}, function(status, headers, body) { //error
+									alert('ERROR!!!!');				
+							}, null);
+					return false;
+				}
+				//end logout
+				
+				
+}
+ 
+var checklogin = function(){
+		ajaxRequest('GET', encodeURI('login'), {'Accept': 'application/json;'}, null
+			, function(status, headers, body) { //success
+				
+				var logout = document.getElementById('logout');
+					removeClass(logout, 'content-hidden');	
+					var threeButton = document.getElementById('threeButton');
+					removeClass(threeButton, 'content-hidden');
+			}, function(status, headers, body) { //error
+			
+				var login = document.getElementById('login');
+				removeClass(login,'content-hidden');
+				
+			}, null);
+
+	
+	}

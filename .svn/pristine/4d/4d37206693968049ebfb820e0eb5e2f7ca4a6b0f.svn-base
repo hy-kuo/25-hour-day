@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>25 hour day</title>
+<link type="text/css" href="css/structure/str-afterlogin.css" rel="stylesheet">
+<link type="text/css" href="css/theme/the-afterlogin.css" rel="stylesheet">
+</head>
+
+<body>
+<p><a href="home.html"><img src="img/logo_black.png" name="logo" width="498" height="60" id="logo" /></a></p>
+<div id="greeting">Dear , here are recommendations for you!</div><input "type="button" id="button"  value="Logout" />
+
+<div id="recommendation">
+  <p>1.</p>
+	<p>2.</p>
+	<p>3.</p>
+</div>
+
+<div id="threeButtons">
+  <img src="img/button/timeline.png" width="100" height="100" />  
+  <img src="img/button/newActivity.png" width="100" height="100" />  
+  <img src="img/button/oldActivity.png" width="100" height="100" />
+</div>
+
+
+</body>
+</html>

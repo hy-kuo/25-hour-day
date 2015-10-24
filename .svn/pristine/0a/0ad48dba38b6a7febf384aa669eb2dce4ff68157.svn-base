@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.input{
+
+	font-family:"Courier New", Courier, monospace;
+	border:none;
+	border-bottom: 1px dotted #ccc;
+}
+.button{
+	border:none;
+	background-color:#000;
+	color:#FFF;
+}
+#container{
+	font-family:"Courier New", Courier, monospace;
+}
+
+	

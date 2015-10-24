@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#container {
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+	text-align: center;
+}
+
+#content {
+	text-align: left;
+	margin-left: 30%;
+	margin-right: 30%;
+	white-space: pre-line;
+}	
+#footer{
+	text-align:center;
+	
+}

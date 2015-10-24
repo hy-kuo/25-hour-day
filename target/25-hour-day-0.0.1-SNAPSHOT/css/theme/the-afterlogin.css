@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+#greeting{
+	font-family:"Courier New", Courier, monospace;
+}
+
+#recommendation{
+	font-family:"Courier New", Courier, monospace;
+	}
+	
+#button{
+	border:none;
+	background-color:#000;
+	color:#FFF;
+}

@@ -1,0 +1,11 @@
+// JavaScript Document
+
+onload = function(){
+	var logo = document.getElementById('logob');
+	logo.onmouseover = function(){
+		var whitepart = document.getElementById('onmouseover');
+		var blackpart = document.getElementById('default');
+		addClass(blackpart, 'class-hidden');
+		removeClass(whitepart, 'class-hidden');
+	}
+}

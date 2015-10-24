@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link type="text/css" href="css/structure/str-home.css" rel="stylesheet" />
+<link type="text/css" href="css/theme/the-home.css" rel="stylesheet" />
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>25 hour day</title>
+</head>
+
+<body>
+<div id="container">
+<div id="header"><img src="img/logo_black.png" width="498" height="60" />
+ <div id="login-logout">
+ 	<div id="login" class="content-hidden">
+<form id="login-form">
+ID:<input id="id" class="input" type="text" />
+Password:<input id="password" class="input" type="password" />
+<input class="button" type="submit" value="Login" />
+</form>
+<sapn>Come on! Join us!<br /><input id="register" class="button" type="button" value="Register" /></sapn>
+	</div>
+	<div id="logout" class="content-hidden">Welcome!
+<form id="logout-form" ><input class="button" type="submit" value="Logout" />
+</form></div>
+	</div>
+</div>
+</div>
+
+<div id="activity_container">
+<span id="timeline_img"><img src="img/bigHeadArrow.png" width="800" height="40" />
+ </span>
+</div>
+
+<div id="threeButton" class="content-hidden">
+<img src="img/button/someIdeas.png" width="100" height="100" /><img src="img/button/newActivity.png" width="100" height="100" /><img src="img/button/oldActivity.png" width="100" height="100" />
+</div>
+
+</body>
+</html>
